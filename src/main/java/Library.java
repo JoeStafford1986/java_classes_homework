@@ -43,4 +43,14 @@ public class Library {
         return this.genreSectionCounter;
     }
 
+    public void classifyBooks() {
+        for(Book book : this.bookCollection){
+            if (genreSectionCounter.containsKey(book.getGenre())){
+                int genreCounter = this.genreSectionCounter.get(book.getGenre() + 1);
+                genreSectionCounter.put(book.getGenre(), genreCounter);
+            }else {
+                genreSectionCounter.put(book.getGenre(), 1);
+            }
+        }
+    }
 }

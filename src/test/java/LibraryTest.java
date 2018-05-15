@@ -17,7 +17,7 @@ public class LibraryTest {
     }
 
     @Test
-    public void bookCollectionStartsEarly(){
+    public void bookCollectionStartsEmpty(){
         assertEquals(0, library.bookCount());
     }
 
@@ -69,6 +69,13 @@ public class LibraryTest {
     @Test
     public void genreSectionCounterStartsEmpty(){
         assertEquals(0, library.getGenreSectionCounter().size());
+    }
+
+    @Test
+    public void canClassifyBooks(){
+        library.addBook(book);
+        library.classifyBooks();
+        assertEquals(1, library.getGenreSectionCounter().size());
     }
 
 }
