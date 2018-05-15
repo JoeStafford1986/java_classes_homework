@@ -43,12 +43,4 @@ public class Library {
         return this.genreSectionCounter;
     }
 
-//
-//    public int findBookIndex(String bookRequest) {
-//        for (Book book : this.bookCollection) {
-//            if (book.getTitle() == bookRequest){
-//                return this.bookCollection.indexOf(book);
-//            }
-//        }
-//    }
 }

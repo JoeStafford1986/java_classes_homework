@@ -9,7 +9,7 @@ public class BookTest {
 
     @Before
     public void before(){
-        book = new Book("LOTR");
+        book = new Book("LOTR", "Fantasy");
     }
 
     @Test
@@ -19,6 +19,6 @@ public class BookTest {
 
     @Test
     public void canGetGenre(){
-        assertEquals("LOTR", book.getTitle());
+        assertEquals("Fantasy", book.getGenre());
     }
 }

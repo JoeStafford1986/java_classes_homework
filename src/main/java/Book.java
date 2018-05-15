@@ -2,12 +2,18 @@ import java.util.HashMap;
 
 public class Book {
     private String title;
+    private String genre;
 
-    public Book(String title){
+    public Book(String title, String genre){
         this.title = title;
+        this.genre = genre;
     }
 
     public String getTitle() {
         return this.title;
+    }
+
+    public String getGenre() {
+        return this.genre;
     }
 }
