@@ -42,4 +42,10 @@ public class LibraryTest {
         assertEquals(true, library.findBook("LOTR"));
     }
 
+    @Test
+    public void cannotFindBook(){
+        library.addBook(book1);
+        assertEquals(false, library.findBook("The Hobbit"));
+    }
+
 }
