@@ -78,4 +78,21 @@ public class LibraryTest {
         assertEquals(1, library.getGenreSectionCounter().size());
     }
 
+    @Test
+    public void canClassifyMultipleBooksToSameGenre(){
+        library.addBook(book);
+        library.addBook(book);
+        library.classifyBooks();
+        assertEquals(1, library.getGenreSectionCounter().size());
+    }
+
+    @Test
+    public void canClassifyMultipleGenres(){
+        Book book1 = new Book("Italian Cookery", "Recipe Book");
+        library.addBook(book);
+        library.addBook(book1);
+        library.classifyBooks();
+        assertEquals(2, library.getGenreSectionCounter().size());
+    }
+
 }
