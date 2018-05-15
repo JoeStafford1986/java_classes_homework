@@ -48,4 +48,9 @@ public class LibraryTest {
         assertEquals(false, library.findBook("The Hobbit"));
     }
 
+    @Test
+    public void noBooksForFindBook(){
+        assertEquals(false, library.findBook("The Hobbit"));
+    }
+
 }
