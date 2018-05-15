@@ -27,4 +27,21 @@ public class Library {
         }
         return false;
     }
+
+    public int getBookIndex(Book book){
+        return this.bookCollection.indexOf(book);
+    }
+
+    public Book loanBook(Book book){
+        return this.bookCollection.remove(this.getBookIndex(book));
+    }
+
+//
+//    public int findBookIndex(String bookRequest) {
+//        for (Book book : this.bookCollection) {
+//            if (book.getTitle() == bookRequest){
+//                return this.bookCollection.indexOf(book);
+//            }
+//        }
+//    }
 }

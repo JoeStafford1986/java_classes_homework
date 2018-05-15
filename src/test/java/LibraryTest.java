@@ -53,4 +53,17 @@ public class LibraryTest {
         assertEquals(false, library.findBook("The Hobbit"));
     }
 
+    @Test
+    public void canGetBookIndex(){
+        library.addBook(book1);
+        assertEquals(0, library.getBookIndex(book1));
+    }
+
+    @Test
+    public void canLoanBook(){
+        library.addBook(book1);
+        assertEquals(book1, library.loanBook(book1));
+        assertEquals(0, library.bookCount());
+    }
+
 }
