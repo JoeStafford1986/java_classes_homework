@@ -16,4 +16,9 @@ public class BookTest {
     public void canGetTitle(){
         assertEquals("LOTR", book.getTitle());
     }
+
+    @Test
+    public void canGetGenre(){
+        assertEquals("LOTR", book.getTitle());
+    }
 }

@@ -66,4 +66,9 @@ public class LibraryTest {
         assertEquals(0, library.bookCount());
     }
 
+    @Test
+    public void genreSectionCounterStartsEmpty(){
+        assertEquals(0, library.getGenreSectionCounter().size());
+    }
+
 }
