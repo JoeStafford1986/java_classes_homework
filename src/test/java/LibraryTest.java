@@ -8,12 +8,14 @@ public class LibraryTest {
     Library library;
     Book book;
     String bookRequest;
+    Book book1;
 
     @Before
     public void before(){
         library = new Library(10);
         book = new Book("LOTR", "Fantasy");
         bookRequest = "LOTR";
+        book1 = new Book("Italian Cookery", "Recipe Book");
     }
 
     @Test
@@ -87,11 +89,34 @@ public class LibraryTest {
     }
 
     @Test
+    public void genreCounterIncreases(){
+        library.addBook(book);
+        library.addBook(book);
+        library.classifyBooks();
+        int genreCount = library.getGenreSectionCounter().get(book.getGenre());
+        assertEquals(2, genreCount);
+    }
+
+    @Test
     public void canClassifyMultipleGenres(){
-        Book book1 = new Book("Italian Cookery", "Recipe Book");
         library.addBook(book);
         library.addBook(book1);
         library.classifyBooks();
+        assertEquals(2, library.getGenreSectionCounter().size());
+    }
+
+    @Test
+    public void canClassifyAndCountMultipleGenres(){
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book1);
+        library.addBook(book1);
+        library.classifyBooks();
+        int genreCount = library.getGenreSectionCounter().get(book.getGenre());
+        int genreCount1 = library.getGenreSectionCounter().get(book1.getGenre());
+        assertEquals(3, genreCount);
+        assertEquals(2, genreCount1);
         assertEquals(2, library.getGenreSectionCounter().size());
     }
 
