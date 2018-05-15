@@ -18,4 +18,13 @@ public class Library {
             this.bookCollection.add(book);
         }
     }
+
+    public boolean findBook(String bookRequest) {
+        for (Book book : this.bookCollection){
+            if (book.getTitle() == bookRequest){
+                return true;
+            }
+        }
+        return false;
+    }
 }
