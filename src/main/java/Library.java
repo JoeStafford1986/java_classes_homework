@@ -9,7 +9,7 @@ public class Library {
     public Library(int capacity) {
         this.bookCollection = new ArrayList();
         this.capacity = capacity;
-        genreSectionCounter = new HashMap<String, Integer>();
+        this.genreSectionCounter = new HashMap<String, Integer>();
     }
 
     public int bookCount() {
@@ -45,11 +45,11 @@ public class Library {
 
     public void classifyBooks() {
         for(Book book : this.bookCollection){
-            if (genreSectionCounter.containsKey(book.getGenre())){
+            if (this.genreSectionCounter.containsKey(book.getGenre())){
                 int genreCounter = this.genreSectionCounter.get(book.getGenre()) + 1;
-                genreSectionCounter.put(book.getGenre(), genreCounter);
+                this.genreSectionCounter.put(book.getGenre(), genreCounter);
             }else {
-                genreSectionCounter.put(book.getGenre(), 1);
+                this.genreSectionCounter.put(book.getGenre(), 1);
             }
         }
     }
